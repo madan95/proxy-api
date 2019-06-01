@@ -1,8 +1,13 @@
 {
-"posts": [
+"posts": 
+[
 	{
 	"id": 1,
 	"name": "madan"
+	},
+	{
+	"id": 2,
+	"name": "jesus"
 	}
-	],
+]
 }
