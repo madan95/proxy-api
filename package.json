@@ -1,13 +1,14 @@
 {
   "name": "apiservice",
   "version": "1.0.0",
-  "description": "",
+  "description": "Dummy Proxy Api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "start": "node index.js"
   },
-  "author": "",
+  "author": "madan",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
