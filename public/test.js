@@ -7,7 +7,7 @@ class Test extends React.Component {
   componentDidMount() {
     setTimeout(() => this.testCORS(), 3000)
     let local_test = `http://localhost:9000/api`
-    let url = `https://password.madanlimbu.com/dashboard`
+    let url = `https://password.madanlimbu.com/dummy`
     let proxy_api = `http://localhost:9000/get?res=${url}`
 
     this.getData(url, data => this.setState({test: JSON.stringify(data)}))
