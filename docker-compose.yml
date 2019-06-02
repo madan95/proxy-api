@@ -6,18 +6,18 @@ services:
     user: 'node'
     working_dir: /home/node/app
     environment:
-    - NODE_ENV=${ENV}
+      - NODE_ENV=${ENV}
     volumes:
-    - ./:/home/node/app
+      - ./:/home/node/app
     command: 'npm start'
     ports:
-    - 9000
+      - 9000
     labels:
-    - "traefik.enable=true"
-    - "traefik.docker.network=traffic"
-    - "traefik.frontend.rule=Host:${DOMAIN}.${BASE}"
+      - "traefik.enable=true"
+      - "traefik.docker.network=traffic"
+      - "traefik.frontend.rule=Host:${DOMAIN}.${BASE}"
     networks:
-    - traffic
+      - traffic
 networks:
   traffic:
     external: true
