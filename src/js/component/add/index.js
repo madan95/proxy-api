@@ -12,7 +12,7 @@ function reducer(state, action) {
       console.log('add called')
       console.log(state)
       console.log(action)
-      let url = "http://localhost:9000/add"
+      let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/add`
       let result = fetch(url, {
         method: 'POST',
         headers: {
