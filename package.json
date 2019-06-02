@@ -37,6 +37,7 @@
     "express": "^4.17.1",
     "nodemon": "^1.19.1",
     "react-router-dom": "^5.0.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "sqlite3": "^4.0.8"
   }
 }

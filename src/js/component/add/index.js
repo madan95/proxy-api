@@ -2,8 +2,8 @@ import React, {useReducer} from "react"
 import "./index.scss"
 
 const initialState = {
-  url: 'Intial Url',
-  data: 'Initial Data'
+  url: '',
+  data: ''
 }
 
 function reducer(state, action) {
@@ -21,6 +21,7 @@ function reducer(state, action) {
         body: JSON.stringify(state)
       }).then(res => res.json());
       console.log(result)
+      //Todo: update color of link created on sucess or failure
       //return {url: 'New URL State', data: 'New data Added.'}
     case 'update':
       return {...state, ...action.payload}
@@ -36,6 +37,7 @@ export default function Add(props) {
     <>
       <label>URL</label>
       <input
+        placeholder="/posts"
         type="text"
         name="url"
         value={state.url}
@@ -47,6 +49,9 @@ export default function Add(props) {
       /><br/>
       <label>Data</label>
       <textarea
+        placeholder='[{"todo":[{"id":1,"getalife":"madan"},{"id":2,"hail":"jesus"}]}]'
+        rows={10}
+        cols={55}
         type="text"
         name="data"
         value={state.data}
@@ -57,9 +62,8 @@ export default function Add(props) {
           }
           )}
       />
-      <div>
-        {state.url}
-        {state.data}
+      <div className="add__endpoint">
+        Your proxy end point is <a href={`${window.location.protocol}//${window.location.hostname}:${window.location.port}/api/${state.url}`} >{`${window.location.protocol}//${window.location.hostname}:${window.location.port}/api/${state.url}`}</a>
       </div>
       <button
         type="submit"

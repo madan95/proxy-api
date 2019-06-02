@@ -2,14 +2,13 @@ import React, {useState} from "react"
 import "./index.scss"
 
 export default function Home() {
-  const [count, setCount] = useState(0)
 
   return (
     <div>
-      <h2>Home page</h2>
+      <h2>Proxy API point for development</h2>
+      <p>Use Test to test your cors endpoints.</p>
+      <p>Use Add to add a custom url /api/:custom_url and json data to get back.</p>
 
-      <p>Count Value {count}</p>
-      <button onClick={() => setCount(count + 1)}>Counter</button>
     </div>
   )
 }
