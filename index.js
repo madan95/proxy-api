@@ -7,7 +7,7 @@ const app = express()
 const port = 9000
 
 app.use(cors())
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'build')))
 
 /**
  * Todo: Dummy api using custom urls
@@ -26,7 +26,6 @@ app.get('/get', (req, res) => {
   sendJson(req, res)
 })
 
-app.get('/', (req, res ) => res.sendFile(path.join(__dirname, './public/index.html')))
-app.get('/test', (req, res) => res.sendFile(path.join(__dirname, './public/test.html')))
+app.get('/', (req, res ) => res.sendFile(path.join(__dirname, './build/index.html')))
 
 app.listen(port, () => console.log(`Express app listening on port ${port}`))

@@ -8,18 +8,32 @@ Once you have the clone of the repo. Install the dependencies, current developme
 
 We are using nodemon during development.
 
+Project Summary : 
+
+    src 
+        - js (contains frontend react components)
+        - scss (global scss)
+    utils  (backend experss server utils)
+    index.js (express stuff)
+         
 ### Prerequisites
 
 - node
 
 ### Installing
 
-Instal modules
+Instal modules and run express server with nodemon
 ```
 cd proxy-api
 npm install
 npm run server
 ```
+
+Run webpack watch on new Terminal for frontend compilation
+
+``
+npm run watch
+``
 
 ## Running the tests
 
