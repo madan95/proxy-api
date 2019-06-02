@@ -38,4 +38,5 @@ We should be able to get the data in browser. Then on your project in JS call th
 We use [SemVer](https://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/madan95/dockerTemple/tags).
 
 ## Author
+
 - Madan Limbu
