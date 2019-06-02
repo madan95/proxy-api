@@ -1,0 +1,23 @@
+version: '3'
+services:
+  nodejs:
+    image: 'node'
+    container_name: proxy_node
+    user: 'node'
+    working_dir: /home/node/app
+    environment:
+    - NODE_ENV=${ENV}
+    volumes:
+    - ./:/home/node/app
+    command: 'npm start'
+    ports:
+    - 9000
+    labels:
+    - "traefik.enable=true"
+    - "traefik.docker.network=traffic"
+    - "traefik.frontend.rule=Host:${DOMAIN}.${BASE}"
+    networks:
+    - traffic
+networks:
+  traffic:
+    external: true
