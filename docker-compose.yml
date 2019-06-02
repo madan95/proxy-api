@@ -1,21 +1,19 @@
 version: '3'
 services:
   nodejs:
-    image: 'node'
-    container_name: proxy_node
-    user: 'node'
+    image: 'node:12'
+    container_name: proxy__node
     working_dir: /home/node/app
     environment:
       - NODE_ENV=${ENV}
     volumes:
       - ./:/home/node/app
-    command: 'npm start'
-    ports:
-      - 9000
+    command: sh -c 'npm i -g yarn && yarn run start'
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traffic"
       - "traefik.frontend.rule=Host:${DOMAIN}.${BASE}"
+      - "traefik.port=9000"
     networks:
       - traffic
 networks:
