@@ -2,10 +2,12 @@ const express = require('express')
 const cors = require('cors')
 const path = require('path')
 const { sendJson } = require('./utils/utils')
-
+const bodyParser = require('body-parser')
 const app = express()
 const port = 9000
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'build')))
 
@@ -13,8 +15,10 @@ app.use(express.static(path.join(__dirname, 'build')))
  * Todo: Dummy api using custom urls
  *
  */
-app.get('/api', (req, res) => {
-  sendJson(req, res)
+app.post('/add', (req, res) => {
+  console.log(req.body);
+  res.json({'ok': 'mate'})
+  //sendJson(req, res)
 })
 
 /**

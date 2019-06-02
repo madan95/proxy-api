@@ -7,8 +7,7 @@ import {
 import Nav from "./component/nav"
 import Home from "./component/home";
 import Test from "./component/test";
-
-//import HelloWorld from "./component/nav";
+import Add from "./component/add";
 
 export default function App() {
   return (
@@ -19,6 +18,7 @@ export default function App() {
       <div className="content">
         <Route exact path="/" component={Home}/>
         <Route path="/test" component={Test}/>
+        <Route path="/add" component={Add}/>
       </div>
     </div>
     </HashRouter>
