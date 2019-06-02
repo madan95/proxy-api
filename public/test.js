@@ -5,7 +5,7 @@ class Test extends React.Component {
       test: props.test,
       dummy: props.dummy,
       host: `${window.location.protocol}//${window.location.hostname}:${window.location.port}/get?res=`,
-      url: '',
+      url: ' ',
     }
     this.updateData = this.updateData.bind(this)
   }
