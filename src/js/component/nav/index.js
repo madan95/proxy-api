@@ -9,6 +9,7 @@ export default function Nav() {
         <li><NavLink exact to="/">Home</NavLink></li>
         <li><NavLink to="/test">Test</NavLink></li>
         <li><NavLink to="/add">Add</NavLink></li>
+        <li><NavLink to="/list">List</NavLink></li>
       </ul>
     </div>
   )

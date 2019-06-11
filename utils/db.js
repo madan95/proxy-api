@@ -36,11 +36,9 @@ const insertSqliteData = (url, data) => {
   db_close(db)
 }
 
-const getSqliteData = () => {
+const getSqliteData = (callback) => {
   let db = get_db()
-  db.each('SELECT rowid AS id, data, url FROM api', function(err, row){
-    console.log(row.id + ' : '+ row.url + ' : ' +row.data)
-  })
+  db.all('SELECT rowid AS id, data, url FROM api', [],  callback)
   db_close(db)
 }
 

@@ -46,6 +46,19 @@ app.get('/api/:url', (req, res) => {
   })
 })
 
+
+app.get('/list', (req, res) => {
+  var data = []
+  db.getSqliteData((err, rows) =>  {
+    if (err) {
+      throw err;
+    }
+    res.json(rows);
+    rows.forEach((row) => {
+      console.log(row.url);
+    });
+  })
+})
 /**
  * Middleware to get res JSON api and by pass CORS issue.
  * /get?res=external_resource_url
